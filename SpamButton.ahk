@@ -1,11 +1,11 @@
-#ifWinActive World of Warcraft
+#ifWinActive FINAL FANTASY XIV
 {
 ; The following script is run when the user presses the '1' key
 ; and will loop until the 1 key is no longer pressed, sending
 ; 1 over and over every delay miliseconds. To use a different
 ; key, replace all three 1s with the key you want repeated.
 
-delay := 100
+delay := 300
 
 $1::
    Loop  
@@ -117,5 +117,14 @@ $-::
     }
 return
 
+$=::
+   Loop  
+   {
+    if not GetKeyState("=", "P")
+      break
+     Send = 
+     Sleep delay
+    }
+return
 
 }
